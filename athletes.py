@@ -42,3 +42,16 @@ def get_placement2(score):
 
 print(get_placement2([5, 4, 3, 2, 1]))
 print(get_placement2([5, 4, 3, 2, 1, 16]))
+
+# ---------------------second soolution-----------------
+def solution(scores):
+    # write your code here
+    scores_in_order = sorted(scores, reverse=True)
+    output = []
+    for score in scores:
+        place = scores_in_order.index(score) + 1
+        award = 'Gold Medal' if place == 1 else 'Silver Medal' if place == 2 else 'Bronze Medal' if place == 3 else str(place)
+        output.append(award)
+    return output
+
+print(solution([5,4,3,2,1]))
